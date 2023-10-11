@@ -9,6 +9,7 @@ packer {
 
 locals {
   ami_name = "CloudTrain-Harbor-${var.revision}-${legacy_isotime("20060102")}-${var.ami_architecture}-gp3"
+  fully_qualified_version = "${var.revision}.${var.changelist}.${var.sha1}"
 }
 
 source "amazon-ebs" "harbor" {
@@ -43,6 +44,7 @@ source "amazon-ebs" "harbor" {
     Project       = "CloudTrain"
     Release       = "Latest"
     Name          = local.ami_name
+    Version       = local.fully_qualified_version
   }
 }
 
@@ -80,7 +82,18 @@ variable region_name {
 variable revision {
   description = "Revision number (major.minor.path) of the AMI"
   type        = string
-  default     = "1.0.0"
+}
+
+variable changelist {
+  description = "Branch name"
+  type        = string
+  default     = "local"
+}
+
+variable sha1 {
+  description = "Short commit hash of code base"
+  type        = string
+  default     = "12345678"
 }
 
 variable ami_architecture {
@@ -100,5 +113,5 @@ variable ec2_instance_type {
 variable harbor_version {
   description = "Harbor version number"
   type        = string
-  default     = "v2.7.1"
+  default     = "v2.8.1"
 }
