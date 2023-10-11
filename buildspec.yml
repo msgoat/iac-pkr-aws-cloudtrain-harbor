@@ -29,7 +29,7 @@ phases:
       - export VERSION_CHANGELIST=${GIT_BRANCH:-main}
       - export VERSION_SHA1=${CODEBUILD_RESOLVED_SOURCE_VERSION:0:8}
       - export PROJECT_VERSION=$VERSION_REVISION.$VERSION_CHANGELIST.$VERSION_SHA1
-      - echo "Building AMI image with packer"
+      - echo "Building AMI image with packer using project version [$PROJECT_VERSION]"
       - packer init .
       - packer build -color=false -var 'revision=$VERSION_REVISION' -var 'changelist=$VERSION_CHANGELIST' -var 'sha1=$VERSION_SHA1' template.pkr.hcl
       - echo "Tag branch [$VERSION_CHANGELIST] with git tag [$PROJECT_VERSION] on behalf of CodeBuild initiator [$CODEBUILD_INITIATOR] and GitHub actor [$CODEBUILD_WEBHOOK_ACTOR_ACCOUNT_ID]"
