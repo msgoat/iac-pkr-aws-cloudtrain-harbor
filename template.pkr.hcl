@@ -113,5 +113,5 @@ variable ec2_instance_type {
 variable harbor_version {
   description = "Harbor version number"
   type        = string
-  default     = "v2.8.1"
+  default     = "v2.9.0"
 }
