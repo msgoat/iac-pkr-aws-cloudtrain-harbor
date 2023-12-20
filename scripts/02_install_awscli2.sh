@@ -10,7 +10,7 @@ else
 fi
 
 echo "Uninstall AWS CLI v1"
-sudo yum remove awscli -y
+sudo dnf remove awscli -y
 
 echo "Download AWS CLI v2 installer using architecture $AWSCLI_ARCHITECTURE"
 mkdir -p ~/awscliv2

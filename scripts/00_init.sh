@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo 'updating installed packages'
-sudo yum update -y
+sudo dnf update -y
 
 echo 'installing missing packages'
-sudo yum install -y gettext
+sudo dnf install -y gettext
