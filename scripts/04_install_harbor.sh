@@ -11,6 +11,9 @@
 # ----------------------------------------------------------------------------
 set -ue
 
+echo "Installing some prerequisites for harbor"
+sudo dnf swap gnupg2-minimal gnupg2-full
+
 export HARBOR_HOME=/opt/harbor
 export HARBOR_BIN_HOME=$HARBOR_HOME/bin
 export HARBOR_DATA_HOME=$HARBOR_HOME/data
