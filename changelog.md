@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [3.0.0] - 2023-12-20
 ### Changed
 - Upgraded OS to Amazon Linux 2023
-- Replaced package manager yum with new default dnf 
+- Replaced package manager yum with new default dnf
+- Upgraded Docker Compose to version v2.23.3
 - Upgraded Harbor to version v2.10.0 
 
 ## [2.1.1] - 2023-10-12

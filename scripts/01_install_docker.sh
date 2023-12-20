@@ -18,7 +18,7 @@ sudo usermod -a -G docker ec2-user
 sudo docker info
 
 echo 'installing docker compose plugin'
-#sudo mkdir -p /usr/local/lib/docker/cli-plugins
-#sudo curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-$COMPOSE_ARCHITECTURE -o /usr/local/lib/docker/cli-plugins/docker-compose
-#sudo chmod a+x /usr/local/lib/docker/cli-plugins/docker-compose
+sudo mkdir -p /usr/local/lib/docker/cli-plugins
+sudo curl -SL https://github.com/docker/compose/releases/download/v2.23.3/docker-compose-linux-$COMPOSE_ARCHITECTURE -o /usr/local/lib/docker/cli-plugins/docker-compose
+sudo chmod a+x /usr/local/lib/docker/cli-plugins/docker-compose
 docker compose version
