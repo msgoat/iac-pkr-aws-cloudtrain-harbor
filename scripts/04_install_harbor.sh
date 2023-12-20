@@ -65,7 +65,7 @@ envsubst </tmp/harbor.yml >$HARBOR_BIN_HOME/harbor.yml
 chown ec2-user:ec2-user $HARBOR_BIN_HOME/harbor.yml
 cd $HARBOR_BIN_HOME
 sudo ./prepare --with-trivy
-sudo docker compose -f $HARBOR_BIN_HOME/docker-compose.yml -q pull
+sudo docker compose -f $HARBOR_BIN_HOME/docker-compose.yml pull -q
 
 echo "Allow harbor user to access all harbor folders"
 sudo chown -R harbor $HARBOR_HOME
