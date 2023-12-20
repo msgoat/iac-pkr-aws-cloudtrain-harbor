@@ -20,7 +20,7 @@ source "amazon-ebs" "harbor" {
     filters = {
       virtualization-type = "hvm"
       architecture        = "${var.ami_architecture}"
-      name                = "amzn2-ami-kernel-5.10-hvm-2.0*"
+      name                = "al2023-ami-*"
       root-device-type    = "ebs"
     }
     most_recent = true
@@ -39,7 +39,7 @@ source "amazon-ebs" "harbor" {
     Department    = "Automotive Academy"
     Extra         = "<no value>"
     Maintainer    = "Michael Theis (msg)"
-    OS_Version    = "Amazon Linux 2"
+    OS_Version    = "Amazon Linux 2023"
     Organization  = "msg systems ag"
     Project       = "CloudTrain"
     Release       = "Latest"
@@ -113,5 +113,5 @@ variable ec2_instance_type {
 variable harbor_version {
   description = "Harbor version number"
   type        = string
-  default     = "v2.9.0"
+  default     = "v2.10.0"
 }

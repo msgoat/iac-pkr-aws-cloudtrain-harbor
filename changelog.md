@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Fixed
 
+## [3.0.0] - 2023-12-20
+### Changed
+- Upgraded OS to Amazon Linux 2023
+- Upgraded Harbor to version v2.10.0 
+
 ## [2.1.1] - 2023-10-12
 ### Changed
 - Prepare step of harbor installation works now after the harbor configuration was updated to version 2.9.0
