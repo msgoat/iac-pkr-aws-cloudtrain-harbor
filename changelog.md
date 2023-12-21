@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Fixed
 
+## [3.0.2] - 2023-12-21
+### Fixed
+- Moved templates for Harbor configuration files to /opt/harbor/tpl since /tmp folder does not survive reboots
+
 ## [3.0.1] - 2023-12-20
 ### Fixed
 - Pull of Harbor images is running in quiet mode node now to avoid log spamming

@@ -31,6 +31,10 @@ sudo mkdir -p $HARBOR_BIN_HOME
 sudo mkdir -p $HARBOR_DATA_HOME
 sudo chown -R ec2-user:ec2-user $HARBOR_HOME
 
+echo "Moving configuration templates in /tmp to retained template folder"
+mkdir -p $HARBOR_HOME/tpl
+mv /tmp/harbor.yml $HARBOR_HOME/tpl/
+
 echo "Download Harbor package using Harbor version $HARBOR_VERSION"
 curl -L -o $HARBOR_BIN_HOME/$HARBOR_PACKAGE_NAME $HARBOR_PACKAGE_URL
 
@@ -61,7 +65,7 @@ export HARBOR_STORAGE_S3_ACCESS_KEY=aws_access_key
 export HARBOR_STORAGE_S3_SECRET_KEY=aws_secret_key
 export HARBOR_STORAGE_S3_REGION=eu-central-1
 export HARBOR_STORAGE_S3_BUCKET_NAME=harbor
-envsubst </tmp/harbor.yml >$HARBOR_BIN_HOME/harbor.yml
+envsubst <$HARBOR_HOME/tpl/harbor.yml >$HARBOR_BIN_HOME/harbor.yml
 chown ec2-user:ec2-user $HARBOR_BIN_HOME/harbor.yml
 cd $HARBOR_BIN_HOME
 sudo ./prepare --with-trivy
