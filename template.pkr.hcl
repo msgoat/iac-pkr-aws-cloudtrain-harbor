@@ -22,7 +22,7 @@ source "amazon-ebs" "harbor" {
     filters = {
       virtualization-type = "hvm"
       architecture        = "${var.ami_architecture}"
-      name                = "al2023-ami-*"
+      name                = "al2023-ami-minimal-*"
       root-device-type    = "ebs"
     }
     most_recent = true
